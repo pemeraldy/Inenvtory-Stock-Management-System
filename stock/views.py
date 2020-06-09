@@ -5,4 +5,5 @@ from .models import *
 
 def home(request):
     products = Product.objects.all()
-    return render(request, 'stock/dashboard.html', {'products':products})
+    orders = Order.objects.all()
+    return render(request, 'stock/dashboard.html', {'products':products, 'orders':orders})
